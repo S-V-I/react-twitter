@@ -5,7 +5,7 @@ import "./index.css";
 import FieldForm from "../../component/field-form";
 import Grid from "../../component/grid";
 
-import { Alert, loader, LOAD_STATUS } from "../../component/load";
+import { Alert, Loader, LOAD_STATUS } from "../../component/load";
 
 export default function Container({
   onCreate,
@@ -62,6 +62,10 @@ export default function Container({
         button={button}
         onSubmit={handleSubmit}
       />
+      {status === LOAD_STATUS.ERROR && (
+        <Alert status={status} message={message} />
+      )}
+      {status === LOAD_STATUS.PROGRESS && <Loader />}
     </Grid>
   );
 }

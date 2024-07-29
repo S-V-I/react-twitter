@@ -1,5 +1,6 @@
 // Підключаємо роутер до бек-енду
 const express = require('express')
+const { post } = require('./post')
 const router = express.Router()
 
 // Підключіть файли роутів
@@ -7,7 +8,7 @@ const router = express.Router()
 // Підключіть інші файли роутів, якщо є
 
 // Об'єднайте файли роутів за потреби
-// router.use('/', test)
+router.use('/', post)
 // Використовуйте інші файли роутів, якщо є
 
 router.get('/', (req, res) => {
